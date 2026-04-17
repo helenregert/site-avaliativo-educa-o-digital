@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabor & Arte | Gastronomia Contemporânea</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav aria-label="Navegação Principal">
+            <div class="logo">Sabor & Arte</div>
+            <ul class="nav-links">
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+            <div class="accessibility-controls">
+                <button id="increase-font" aria-label="Aumentar fonte">A+</button>
+                <button id="decrease-font" aria-label="Diminuir fonte">A-</button>
+                <button id="toggle-contrast" aria-label="Alternar Alto Contraste">🌓</button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero reveal">
+            <h1>Experiências Gastronômicas Inesquecíveis</h1>
+            <p>Descubra o prazer da culinária feita com alma e ingredientes locais.</p>
+        </section>
+
+        <section id="menu" class="reveal">
+            <h2>Nossas Especialidades</h2>
+            <div id="menu-container" class="grid-container" role="region" aria-live="polite">
+                </div>
+        </section>
+
+        <section class="carousel-section reveal">
+            <h2>Destaques da Semana</h2>
+            <div class="carousel" role="toolbar" aria-label="Carrossel de pratos">
+                <div id="carousel-track" class="carousel-track"></div>
+                <button class="prev" aria-label="Prato anterior">❮</button>
+                <button class="next" aria-label="Próximo prato">❯</button>
+            </div>
+        </section>
+
+        <section id="faq" class="reveal">
+            <h2>Dúvidas Frequentes</h2>
+            <div class="accordion-container" id="faq-accordion">
+                </div>
+        </section>
+    </main>
+
+    <footer class="reveal">
+        <p>&copy; 2023 Sabor & Arte. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
