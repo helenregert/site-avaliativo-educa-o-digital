@@ -1,0 +1,97 @@
+/* --- DESIGN SYSTEM & VARIABLES --- */
+:root {
+    --primary-color: #d35400; /* Laranja Gastronômico */
+    --secondary-color: #2c3e50;
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --spacing: 1.5rem;
+    --radius: 8px;
+    --transition: all 0.3s ease;
+    --font-size-base: 16px;
+}
+
+/* --- MODO ALTO CONTRASTE --- */
+body.high-contrast {
+    --primary-color: #ffff00;
+    --secondary-color: #000000;
+    --bg-color: #000000;
+    --text-color: #ffffff;
+}
+
+html { font-size: var(--font-size-base); }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: var(--transition);
+}
+
+/* --- LAYOUT (MOBILE FIRST) --- */
+header {
+    background: var(--secondary-color);
+    color: white;
+    padding: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile: 1 coluna */
+    gap: var(--spacing);
+    padding: var(--spacing);
+}
+
+/* --- COMPONENTES --- */
+.card {
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    padding: 1rem;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 800px;
+    margin: auto;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+/* --- ANIMAÇÕES (SCROLL REVEAL) --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* --- MEDIA QUERIES (DESKTOP) --- */
+@media (min-width: 768px) {
+    nav { flex-direction: row; justify-content: space-between; }
+    
+    /* Edite aqui o número de colunas do grid */
+    .grid-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
